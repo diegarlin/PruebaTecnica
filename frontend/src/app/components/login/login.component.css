@@ -18,6 +18,12 @@ h1 {
     color: #343a40;
 }
 
+button {
+    background-color: rgb(255, 0, 0);
+    max-width: fit-content;
+    margin: 15px auto;
+}
+
 /* Estilo del formulario */
 .form {
     display: flex;

@@ -1,77 +1,21 @@
-/* Estilos para el contenedor principal */
-.container {
-    max-width: 400px;
-    /* Ancho máximo del contenedor */
-    margin: 50px auto;
-    /* Centrar horizontalmente y agregar margen superior */
-    padding: 20px;
-    /* Espacio interior */
-    background-color: #ffffff;
-    /* Fondo blanco */
-    border-radius: 10px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    /* Sombra */
-    text-align: center;
-    /* Centrar texto */
-}
-
-/* Estilo para el título */
-h1 {
-    margin-bottom: 20px;
-    /* Espaciado debajo del título */
-    font-size: 2rem;
-    /* Tamaño de fuente del título */
-    color: #343a40;
-    /* Color del texto */
-}
-
-/* Estilo del formulario */
-.form {
-    display: flex;
-    /* Usar flexbox */
-    flex-direction: column;
-    /* Organizar en columna */
-}
-
-/* Estilo para los campos de formulario */
-.form-field {
-    width: 100%;
-    /* Ancho completo */
-    margin-bottom: 20px;
-    /* Espaciado entre campos */
-}
-
-/* Estilo para mensajes de error */
-.error-message {
-    color: #dc3545;
-    /* Color rojo para mensajes de error */
-    font-size: 0.875rem;
-    /* Tamaño de fuente más pequeño */
-    margin-top: 5px;
-    /* Espaciado superior */
-}
+/* src/styles.css */
 
 /* Estilo para el contenedor de la página principal */
 .main-container {
     text-align: center;
-    /* Centrar texto */
     margin: 20px;
-    /* Margen alrededor del contenedor */
 }
 
 /* Estilo para los enlaces de navegación */
 nav a {
     margin: 0 10px;
-    /* Espaciado entre los enlaces */
 }
 
-/* Estilo para el botón del formulario */
+/* Estilo general para el botón (si es aplicable a toda la app) */
 button {
     width: 100%;
-    /* Ancho completo */
     padding: 10px;
-    /* Espaciado interno */
     font-size: 1rem;
-    /* Tamaño de fuente */
 }
+
+/* Otros estilos generales que podrían aplicarse a toda la app */
