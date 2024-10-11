@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon server.js"
   },
-  "author": "",
+  "author": "Diego García Linares",
   "license": "ISC",
   "description": "",
   "devDependencies": {
