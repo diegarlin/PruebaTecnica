@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     JsonPipe,
     MatInputModule,
     MatFormFieldModule,
+    HttpClientModule,
     MatButtonModule,],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
