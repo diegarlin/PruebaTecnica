@@ -3,9 +3,16 @@ const { connectDB } = require('./config/db')
 const Usuario = require('./models/Usuario')
 const authRoutes = require('./routes/authRoutes')
 const { authenticateJWT } = require('./middlewares/authMiddlewares')
+const cors = require('cors')
 require('dotenv').config()
 
 const app = express()
+
+app.use(cors({
+  origin: 'http://localhost:4200',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
+}))
 
 app.use(express.json())
 app.disable('x-powered-by')
