@@ -1,0 +1,23 @@
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "username": "diegarlin",
+    "password": "diego1234",
+    "email": "garcialinaresdiego@gmail.com"
+}
+
+###
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "username": "diegarlin",
+    "password": "diego1234"
+}
+
+###
+
+GET http://localhost:3000/perfil
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJkaWVnYXJsaW4iLCJpYXQiOjE3Mjg2NDYyNTUsImV4cCI6MTcyODY0OTg1NX0.-rsaD6SZ3_X9FsmJTpZ0E5zkB_VtMmhALL8EWM7wbds
