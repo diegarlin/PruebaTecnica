@@ -8,6 +8,11 @@ import { throwError } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+
+interface LoginResponse {
+  token: string;
+}
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -41,7 +46,7 @@ export class LoginComponent {
 
     if (this.form().valid) {
       console.log('Form valid');
-      this.http.post('http://localhost:3000/api/login', this.form().value)
+      this.http.post<LoginResponse>('http://localhost:3000/api/login', this.form().value)
         .pipe(
           catchError((error) => {
             if (error.status === 400) {
@@ -52,8 +57,9 @@ export class LoginComponent {
             return throwError(error);
           })
         )
-        .subscribe(response => {
+        .subscribe((response: LoginResponse) => {
           console.log('Login succesful', response);
+          localStorage.setItem('token', response.token);
           alert('Login successful!');
           this.router.navigate(['/successful']);
         }, error => {
