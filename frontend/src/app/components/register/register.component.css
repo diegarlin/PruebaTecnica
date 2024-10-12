@@ -11,6 +11,12 @@
     text-align: center;
 }
 
+button {
+    background-color: rgb(255, 0, 0);
+    max-width: fit-content;
+    margin: 15px auto;
+}
+
 /* Estilo para el título del formulario de registro */
 h1 {
     margin-bottom: 20px;
