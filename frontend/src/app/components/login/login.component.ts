@@ -2,7 +2,7 @@ import { JsonPipe, CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,
-    RouterOutlet,
     HttpClientModule
   ],
   templateUrl: './login.component.html',
@@ -34,7 +33,7 @@ export class LoginComponent {
 
   errorMessage: string | null = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit() {
     console.log('Form submitted');
@@ -54,9 +53,11 @@ export class LoginComponent {
           })
         )
         .subscribe(response => {
-          console.log('Registration successful', response);
+          console.log('Login succesful', response);
+          alert('Login successful!');
+          this.router.navigate(['/successful']);
         }, error => {
-          console.error('Registration failed', error);
+          console.error('Login successful', error);
         });
     }
   }

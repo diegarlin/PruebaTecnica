@@ -2,7 +2,7 @@ import { JsonPipe, CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { MatInputModule } from '@angular/material/input';
@@ -12,8 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'register-component',
   standalone: true,
-  imports: [RouterOutlet,
-    CommonModule,
+  imports: [CommonModule,
     ReactiveFormsModule,
     JsonPipe,
     MatInputModule,
@@ -36,7 +35,7 @@ export class RegisterComponent {
 
   errorMessage: string | null = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit() {
     console.log('Form submitted');
@@ -58,6 +57,8 @@ export class RegisterComponent {
         )
         .subscribe(response => {
           console.log('Registration successful', response);
+          alert('Registration successful!');
+          this.router.navigate(['/login']);
         }, error => {
           console.error('Registration failed', error);
         });
