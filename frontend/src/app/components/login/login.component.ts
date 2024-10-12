@@ -61,7 +61,9 @@ export class LoginComponent {
           console.log('Login succesful', response);
           localStorage.setItem('token', response.token);
           alert('Login successful!');
-          this.router.navigate(['/successful']);
+          this.router.navigateByUrl('/successful').then(() => {
+            window.location.reload();
+          });
         }, error => {
           console.error('Login successful', error);
         });

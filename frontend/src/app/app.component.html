@@ -1,8 +1,13 @@
 <div class="main-container">
+    <h1>Angular Authentication</h1>
     <nav>
-        <a mat-button href="/register">Registro</a>
-        |
-        <a mat-button href="/login">Login</a>
+
+        <a *ngIf="!hasToken" mat-button href="/register">Registro</a>
+
+        <a *ngIf="!hasToken" mat-button href="/login">Login</a>
+
+        <a *ngIf="hasToken" mat-button (click)="logout()">Logout</a>
+
     </nav>
     <router-outlet></router-outlet>
 </div>
