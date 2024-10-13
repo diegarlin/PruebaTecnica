@@ -17,7 +17,7 @@ const register = async (req, res) => {
   const user = await Usuario.findOne({ where: { username } })
 
   if (user != null) {
-    return res.status(400).json({ message: 'Ya existe un usuario con ese mismo nombre de usuario' })
+    return res.status(409).json({ message: 'Ya existe un usuario con ese mismo nombre de usuario' })
   }
 
   const hashedPassword = bcrypt.hashSync(password)
@@ -30,7 +30,7 @@ const register = async (req, res) => {
 
     })
 
-    return res.status(201).json({ message: `El usuario ${user.username} sido creado correctamente` })
+    return res.status(201).json({ message: `El usuario ${user.username} ha sido creado correctamente` })
   } catch (err) {
     return res.status(500).json({ message: 'No se ha podido crear el usuario' })
   }
@@ -68,4 +68,11 @@ const login = async (req, res) => {
   }
 }
 
-module.exports = { register, login }
+const perfil = async (req, res) => {
+  res.json({
+    message: `Bienvenido ${req.user.username}`,
+    user: req.user
+  })
+}
+
+module.exports = { register, login, perfil }
