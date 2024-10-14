@@ -19,5 +19,5 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/perfil
+GET http://localhost:3000/api/perfil
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJkaWVnYXJsaW4iLCJpYXQiOjE3Mjg2NDYyNTUsImV4cCI6MTcyODY0OTg1NX0.-rsaD6SZ3_X9FsmJTpZ0E5zkB_VtMmhALL8EWM7wbds

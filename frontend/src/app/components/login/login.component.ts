@@ -42,8 +42,7 @@ export class LoginComponent {
 
   onSubmit() {
     console.log('Form submitted');
-    this.errorMessage = null; // Reinicia el mensaje de error al enviar el formulario
-
+    this.errorMessage = null;
     if (this.form().valid) {
       console.log('Form valid');
       this.http.post<LoginResponse>('http://localhost:3000/api/login', this.form().value)

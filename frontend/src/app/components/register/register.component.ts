@@ -35,24 +35,24 @@ export class RegisterComponent {
 
   errorMessage: string | null = null;
 
+  //método que se ejecuta al cargar el componente y sirve para configuración inicial
   constructor(private http: HttpClient, private router: Router) { }
 
   onSubmit() {
     console.log('Form submitted');
-    this.errorMessage = null; // Reinicia el mensaje de error al enviar el formulario
+    this.errorMessage = null;
 
     if (this.form().valid) {
       console.log('Form valid');
       this.http.post('http://localhost:3000/api/register', this.form().value)
         .pipe(
           catchError((error) => {
-            // Aquí puedes manejar los errores HTTP
             if (error.status === 400) {
               this.errorMessage = error.error.message;
             } else {
               this.errorMessage = 'An unexpected error occurred. Please try again later.';
             }
-            return throwError(error); // Opcional: Si quieres propagar el error
+            return throwError(error);
           })
         )
         .subscribe(response => {

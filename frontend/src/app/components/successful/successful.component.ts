@@ -15,6 +15,7 @@ interface successfulResponse {
   templateUrl: './successful.component.html',
   styleUrl: './successful.component.css'
 })
+
 export class SuccessfulComponent {
 
 
@@ -22,12 +23,11 @@ export class SuccessfulComponent {
   errorMessage: string | null = null;
   message: string | null = null;
 
-  //método que se ejecuta al cargar el componente y sirve para configuración inicial
   constructor(private http: HttpClient) {
     // verifica que se este ejecutando en el navegador y carga localStorage
     if (typeof window !== 'undefined') {
       this.token = localStorage.getItem('token');
-      this.http.get<successfulResponse>('http://localhost:3000/perfil', { headers: { Authorization: `Bearer ${this.token}` } })
+      this.http.get<successfulResponse>('http://localhost:3000/api/perfil', { headers: { Authorization: `Bearer ${this.token}` } })
         .pipe(
           catchError((error) => {
             if (error.status === 400) {
