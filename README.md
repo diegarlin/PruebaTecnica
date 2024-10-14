@@ -85,6 +85,14 @@ Este proyecto consiste en un backend desarrollado con Express y un frontend con 
     
    El frontend se iniciará en `http://localhost:4200`.
 
+   - Para la ejecucion de pruebas debes tener el backend y frontend ejecutandose y utilizar el siguiente comando en la ruta `/frontend`:
+
+   ```bash
+     npm run cypress:open
+   ```
+
+   Esto abrirá una consola y pestaña en la cual podrás correr las pruebas que se encuentran en la carpeta `/cypress/e2e`.
+
 ## Arquitectura del Proyecto
 
 El proyecto está dividido en dos partes principales, el backend y el frontend.
